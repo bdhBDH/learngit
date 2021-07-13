@@ -1,0 +1,23 @@
+# makefile2
+
+CC=gcc
+CXX=g++
+CFLAGS= -g -Wall
+
+INC=./***
+LIB=./***.a
+BIN=./****/***
+CFLAGS+=-DSNACC_DEEP_COPY -DHAVE_VARIABLE_SIZED_AUTOMATIC_ARRAYS -Wno-deprecated -lpthread -lssl
+TARGET=***
+OBJ=**.o\
+./**.o\
+
+$(TARGET):$(OBJ)
+	$(CXX) $(CFLAGS) -o $@ $^ $(LIB)
+	
+%.o:%.cpp
+	$(CXX) $(CFLAGS) $(INC) -c -o $@ $<
+
+clean:
+	rm -f *.o
+	rm -f $(target)

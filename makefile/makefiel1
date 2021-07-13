@@ -1,0 +1,6 @@
+hello:hello.c
+	gcc -i${HOME}/incl -c hello.c
+	gcc -o hello hello.o
+	rm -f hello.o
+	mv hello ${HOME}/bin
+
