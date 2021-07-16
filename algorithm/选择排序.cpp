@@ -2,7 +2,7 @@
 #include <vector>
 using namespace std;
 
-class SOlution{
+class Solution{
 public:
     void selectSort(vector<int>& nums)
     {

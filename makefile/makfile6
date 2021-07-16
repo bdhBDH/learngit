@@ -1,0 +1,64 @@
+a_objects := a.o b.o c.o
+1.objects := 1.o 2.o 3.o
+
+sources := $($(a1)_objects:.o=.c)
+
+ifdef do_sort
+	func := sort
+else
+	func := strip
+endif
+
+bar := a d bd e d x
+foo := $($(func) $(bar))
+# +=
+objects = main.o foo.o bar.o utils.o
+objects += auntr.o
+
+# override
+override define foo
+bar
+endef
+
+$(subst, from, to, text)
+$(patsubst pattern, replacement, text)
+$(patsubst, %.c, %.o, x.c bar.c baz.c)
+
+$(strip <string>)
+$(strip a b c )
+$(findstring <find>, <in>)
+
+filter
+$(filter <pattern...>, <text>)
+sources := foo.c bar.o baz.o ugh.h
+foo : $(sources)
+	cc $(filter %.c %.s, $(sources)) -o foo
+
+filter_out
+$(filter_out <pattern>, <text>)
+
+sort   # delete the copy string
+$(sort list)
+
+word
+$(word <n>, string)
+
+wordlist
+$(wordlist <first>, <end>, <text>)
+
+words
+$(words text)
+
+override CFLAGS += $(patsubst %,-I%,$(subst :, ,$(VPATH)))
+
+
+
+
+
+
+
+
+
+
+
+
