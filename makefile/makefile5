@@ -1,0 +1,21 @@
+clean:
+	-rm -f *.o
+	
+clean:
+	cat main.c
+	rm -f *.o
+	
+print:*.c
+	lpr -p $?
+	touch print
+
+OBJECTS = *.o
+
+CXX = g++
+
+VPATH = src:../headers
+# vpath <pattern> <directories>
+vpath %.h ../headers
+
+.PHONY : clean
+	

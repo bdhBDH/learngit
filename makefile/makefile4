@@ -1,0 +1,21 @@
+OBJECTS = main.o kdb.o command.o display.o \
+	insert.o serach.o files.o utils.o
+	
+edit : $(OBJECTS)
+	cc -o edit $(OBJECTS)
+	
+# main.o : main.c defs.h
+main.o : defs.h
+
+.PHONY : clean
+	
+clean:
+	rm edit $(OBJECTS)
+	
+include foo.make *.mk $(bar)
+-include ./bin/root/learngit/2.mk 3.mk
+# ignore the error  { - }
+
+
+
+
