@@ -1,0 +1,21 @@
+# makefile 退出码
+# 0 - 执行成功
+# 1 - 出现错误
+# 2 - make -q 并且make使得一些目标不需要更新，那么返回2。
+
+# makefile 指定文件 make -f [--file] hchen.mk
+# make -f hechen.mk
+
+# 指定目标
+# MAKECMDGOALS 这个变量中会存放你所指定的终极目标的列表，如果在命令行上，你没有指定目标，
+# 那么，这个变量是空值。这个变量可以让你使用在一些比较特殊的情形下
+sources = foo.c bar.c
+ifneq ( $(MAKECMDGOALS), clean )
+	include $(sources:.c=.d)
+
+# 指定终极目标
+.PHONY:all
+all:prog1 prog2 prog3
+# 可以单独编译，也可以全局编译
+
+
