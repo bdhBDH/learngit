@@ -1,9 +1,0 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-1234444
-=======
-wqqqqqqqq
->>>>>>> dev
-=======
-wqqqqqqqq
->>>>>>> dev
